@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aleksei Sablin — Remote Video Editor & Filmmaker</title>
+  <meta name="description" content="Aleksei Sablin is a remote video editor and filmmaker with 10+ years of experience in commercials, wedding films, music videos, interviews, and branded video content." />
+  <meta property="og:title" content="Aleksei Sablin — Remote Video Editor & Filmmaker" />
+  <meta property="og:description" content="Cinematic video editing for brands, creators, agencies, and production teams worldwide." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sablinfilms.com" />
+  <meta property="og:image" content="https://sablinfilms.com/preview.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --bg-soft: #12161c;
+      --card: #151a21;
+      --card-light: #1d242d;
+      --text: #f4f7fb;
+      --muted: #9aa7b6;
+      --line: rgba(255, 255, 255, 0.1);
+      --accent: #e8c36a;
+      --accent-soft: rgba(232, 195, 106, 0.14);
+      --white: #ffffff;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius: 28px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(232, 195, 106, 0.14), transparent 34%),
+        radial-gradient(circle at 80% 10%, rgba(118, 143, 255, 0.12), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(11, 13, 16, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      font-size: 22px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--white);
+      color: #111;
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 92px 0 68px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.04);
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 0 6px rgba(52, 211, 153, 0.12);
+    }
+
+    h1 {
+      font-size: clamp(46px, 7vw, 86px);
+      line-height: 0.94;
+      letter-spacing: -0.075em;
+      margin-bottom: 28px;
+    }
+
+    .gradient-text {
+      color: var(--accent);
+    }
+
+    .hero p {
+      font-size: clamp(18px, 2vw, 22px);
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 34px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #101010;
+      box-shadow: 0 14px 40px rgba(232, 195, 106, 0.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 60px rgba(232, 195, 106, 0.28);
+    }
+
+    .btn-secondary {
+      border-color: var(--line);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .showreel {
+      min-height: 500px;
+      border-radius: 22px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.72)),
+        url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=85') center/cover;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 26px;
+    }
+
+    .play {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+    }
+
+    .play-button {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      color: #111;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      padding-left: 5px;
+      box-shadow: 0 18px 70px rgba(0, 0, 0, 0.32);
+    }
+
+    .showreel-caption {
+      position: relative;
+      z-index: 2;
+    }
+
+    .showreel-caption strong {
+      display: block;
+      font-size: 24px;
+      letter-spacing: -0.04em;
+    }
+
+    .showreel-caption span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .stat {
+      padding: 20px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 26px;
+      letter-spacing: -0.04em;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .section-head p {
+      max-width: 530px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card,
+    .work-card,
+    .about-card,
+    .contact-card {
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+    }
+
+    .service-card h3,
+    .work-card h3,
+    .about-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      letter-spacing: -0.035em;
+    }
+
+    .service-card p,
+    .work-card p,
+    .about-card p,
+    .contact-card p {
+      color: var(--muted);
+    }
+
+    .icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .work-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .thumb {
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, #202833, #101419);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.82;
+      transition: transform 0.3s ease;
+    }
+
+    .work-card:hover .thumb img {
+      transform: scale(1.05);
+    }
+
+    .tag {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(11, 13, 16, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      font-size: 12px;
+      color: var(--white);
+      backdrop-filter: blur(10px);
+    }
+
+    .work-body {
+      padding: 22px;
+    }
+
+    .work-link {
+      display: inline-flex;
+      margin-top: 18px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .client-list,
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      padding: 9px 12px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      counter-reset: step;
+    }
+
+    .step {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      counter-increment: step;
+    }
+
+    .step::before {
+      content: '0' counter(step);
+      display: inline-flex;
+      color: var(--accent);
+      font-weight: 900;
+      margin-bottom: 28px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 30px;
+      align-items: center;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(232, 195, 106, 0.18), transparent 35%),
+        rgba(255, 255, 255, 0.045);
+    }
+
+    .contact-card h2 {
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      margin-bottom: 18px;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-link {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid var(--line);
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .services,
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .showreel {
+        min-height: 390px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .hero {
+        padding: 58px 0 44px;
+      }
+
+      .services,
+      .portfolio-grid,
+      .process,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 14px;
+      }
+
+      .showreel {
+        min-height: 330px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#top">Sablin<span>Films</span></a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Available for remote projects worldwide</div>
+          <h1>Remote Video Editor & <span class="gradient-text">Filmmaker</span></h1>
+          <p>I help brands, creators, agencies, and production teams turn raw footage into cinematic, emotional, and polished videos — from commercials and music videos to interviews, branded content, and wedding films.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#work">View Portfolio</a>
+            <a class="btn btn-secondary" href="mailto:sablinfilms@gmail.com">Let’s Work Together</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Showreel preview">
+          <a class="showreel" href="#work">
+            <div class="play"><div class="play-button">▶</div></div>
+            <div class="showreel-caption">
+              <strong>Showreel / Portfolio</strong>
+              <span>Replace this block with your best video or Vimeo/YouTube link</span>
+            </div>
+          </a>
+          <div class="stats">
+            <div class="stat"><strong>10+</strong><span>Years experience</span></div>
+            <div class="stat"><strong>2014</strong><span>In production since</span></div>
+            <div class="stat"><strong>∞</strong><span>Remote worldwide</span></div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Editing that feels cinematic, clear, and alive.</h2>
+          <p>I work with long-form and short-form content, from raw footage to final delivery, including storytelling, rhythm, color, sound, captions, graphics, and polished visual style.</p>
+        </div>
+        <div class="services">
+          <article class="service-card">
+            <div class="icon">01</div>
+            <h3>Video Editing</h3>
+            <p>Commercials, wedding films, music videos, interviews, YouTube videos, trailers, teasers, and branded video content.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon">02</div>
+            <h3>Color & Visual Style</h3>
+            <p>Clean correction, cinematic grading, visual consistency, mood, atmosphere, and polished delivery for different platforms.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon">03</div>
+            <h3>Motion & Graphics</h3>
+            <p>Titles, simple motion graphics, clean captions, visual accents, and creative video concepts for polished final delivery.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-head">
+          <h2>Selected work</h2>
+          <p>Use this section to link your best videos. Replace the placeholder images and links with Vimeo, YouTube, Instagram, or Google Drive portfolio links.</p>
+        </div>
+        <div class="portfolio-grid">
+          <article class="work-card">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85" alt="Wedding film preview" />
+              <span class="tag">Wedding Film</span>
+            </div>
+            <div class="work-body">
+              <h3>Cinematic Wedding Story</h3>
+              <p>Emotional pacing, music-driven storytelling, clean color, and a polished film-style edit.</p>
+              <a class="work-link" href="https://youtu.be/JpfBSeOO0do" target="_blank" rel="noopener">Watch project →</a>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?auto=format&fit=crop&w=1000&q=85" alt="Commercial video preview" />
+              <span class="tag">Commercial</span>
+            </div>
+            <div class="work-body">
+              <h3>Brand / Corporate Video</h3>
+              <p>Structured editing for companies, products, services, events, and brand communication.</p>
+              <a class="work-link" href="https://youtu.be/d_IHairVoBk" target="_blank" rel="noopener">Watch project →</a>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1000&q=85" alt="Music video preview" />
+              <span class="tag">Music Video</span>
+            </div>
+            <div class="work-body">
+              <h3>Music & Performance Edit</h3>
+              <p>Rhythm-focused editing with strong transitions, atmosphere, emotion, and dynamic pacing.</p>
+              <a class="work-link" href="https://sablinfilms.com" target="_blank" rel="noopener">Watch project →</a>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85" alt="Interview video preview" />
+              <span class="tag">Interview</span>
+            </div>
+            <div class="work-body">
+              <h3>Interview / Talking Head</h3>
+              <p>Clean dialogue editing, pacing, b-roll structure, sound cleanup, graphics, and delivery formats.</p>
+              <a class="work-link" href="https://youtu.be/ALHscIWGbhI" target="_blank" rel="noopener">Watch project →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>10+ years in video production.</h2>
+          <p>Since 2014, I’ve worked across weddings, commercial productions, branded content, artists, creators, and social media projects.</p>
+        </div>
+        <div class="about-grid">
+          <article class="about-card">
+            <h3>Experience</h3>
+            <p>I combine filmmaking background with editing craft: storytelling, rhythm, emotional structure, music sense, color, and visual polish. I can work independently or as part of a remote production team.</p>
+            <div class="client-list">
+              <span class="pill">Rosneft</span>
+              <span class="pill">Russian Railways</span>
+              <span class="pill">Ministry of Tourism</span>
+              <span class="pill">Agricultural companies</span>
+              <span class="pill">Artists</span>
+              <span class="pill">Bloggers</span>
+              <span class="pill">Dancers</span>
+            </div>
+          </article>
+          <article class="about-card">
+            <h3>Tools</h3>
+            <p>Professional editing and post-production workflow for cinematic films, commercial projects, and fast social media content.</p>
+            <div class="tools-list">
+              <span class="pill">DaVinci Resolve</span>
+              <span class="pill">Adobe Premiere Pro</span>
+              <span class="pill">After Effects</span>
+              <span class="pill">Photoshop</span>
+              <span class="pill">CapCut</span>
+              <span class="pill">Kling AI</span>
+              <span class="pill">Midjourney</span>
+              <span class="pill">AI workflows</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>Simple remote workflow</h2>
+          <p>A clean process for agencies, creators, and production teams who need reliable video editing without micromanagement.</p>
+        </div>
+        <div class="process">
+          <article class="step">
+            <h3>Brief</h3>
+            <p>You send footage, references, music ideas, script, brand notes, or examples.</p>
+          </article>
+          <article class="step">
+            <h3>Edit</h3>
+            <p>I build the structure, rhythm, story, color, sound, titles, and platform versions.</p>
+          </article>
+          <article class="step">
+            <h3>Review</h3>
+            <p>You leave comments and I make revisions until the video is polished and ready.</p>
+          </article>
+          <article class="step">
+            <h3>Delivery</h3>
+            <p>Final exports for YouTube, Instagram, TikTok, LinkedIn, ads, website, or broadcast needs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <h2>Need a reliable remote video editor?</h2>
+            <p>Send me your footage, references, or project idea. I’m available for remote editing work with brands, creators, agencies, and production teams worldwide.</p>
+            <div class="actions" style="margin-top: 28px;">
+              <a class="btn btn-primary" href="mailto:sablinfilms@gmail.com">Email Me</a>
+              <a class="btn btn-secondary" href="https://t.me/sablinfilms" target="_blank" rel="noopener">Telegram</a>
+            </div>
+          </div>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:sablinfilms@gmail.com">sablinfilms@gmail.com</a>
+            <a class="contact-link" href="https://t.me/sablinfilms" target="_blank" rel="noopener">Telegram: @sablinfilms</a>
+            <a class="contact-link" href="https://wa.me/995597706869" target="_blank" rel="noopener">WhatsApp: +995 597 706 869</a>
+            <a class="contact-link" href="https://instagram.com/sablinfilms" target="_blank" rel="noopener">Instagram: @sablinfilms</a>
+            <a class="contact-link" href="https://sablinfilms.com" target="_blank" rel="noopener">Website: sablinfilms.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Aleksei Sablin. Remote Video Editor & Filmmaker.</span>
+      <span>Commercials · Wedding Films · Music Videos · Interviews</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
